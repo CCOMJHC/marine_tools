@@ -1,0 +1,26 @@
+<package format="2">
+  <name>marine_tools</name>
+  <version>0.0.0</version>
+  <description>
+    Marine data tools
+  </description>
+
+  <maintainer email="roland@ccom.unh.edu">Roland Arsenault</maintainer>
+  <author>Roland Arsenault</author>
+
+  <license>BSD</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <depend>geometry_msgs</depend>
+  <depend>marine_acoustic_msgs</depend>
+  <depend>pcl_ros</depend>
+  <depend>project11_msgs</depend>
+  <depend>rosbag</depend>
+  <depend>roscpp</depend>
+  <depend>tf2</depend>
+  <depend>tf2_ros</depend>
+  <depend>visualization_msgs</depend>
+
+  <export>
+  </export>
+</package>

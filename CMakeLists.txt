@@ -9,10 +9,13 @@ find_package(catkin REQUIRED COMPONENTS
     project11_msgs
     rosbag
     roscpp
+    rospy
     tf2
     tf2_ros
     visualization_msgs
 )
+
+catkin_python_setup()
 
 catkin_package(
     CATKIN_DEPENDS

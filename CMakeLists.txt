@@ -4,6 +4,7 @@ project(marine_tools)
 find_package(catkin REQUIRED COMPONENTS
     geometry_msgs
     marine_acoustic_msgs
+    nmea_msgs
     pcl_ros
     project11_msgs
     rosbag
@@ -17,6 +18,7 @@ catkin_package(
     CATKIN_DEPENDS
         geometry_msgs
         marine_acoustic_msgs
+        nmea_msgs
         pcl_ros
         project11_msgs
         roscpp
@@ -37,7 +39,13 @@ add_executable(marine_sonar_to_pointcloud src/marine_sonar_to_pointcloud.cpp src
 add_dependencies(marine_sonar_to_pointcloud ${marine_tools_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 target_link_libraries(marine_sonar_to_pointcloud ${catkin_LIBRARIES})
 
-install(TARGETS  marine_sonar_to_pointcloud
+
+add_executable(navsatfix_to_nmea src/navsatfix_to_nmea.cpp)
+add_dependencies(navsatfix_to_nmea ${marine_tools_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+target_link_libraries(navsatfix_to_nmea ${catkin_LIBRARIES})
+
+
+install(TARGETS  marine_sonar_to_pointcloud navsatfix_to_nmea
         LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
         ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
         RUNTIME DESTINATION ${CATKIN_GLOBAL_BIN_DESTINATION}

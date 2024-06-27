@@ -10,7 +10,7 @@ import socket
 s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 
 def nmeaCallback(msg: Sentence):
-  print(msg)
+  #print(msg)
   s.sendto(bytes(msg.sentence, 'utf-8'), (address, port))
 
 

@@ -51,6 +51,11 @@ add_executable(imu_to_hdt src/imu_to_hdt.cpp)
 add_dependencies(imu_to_hdt ${marine_tools_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 target_link_libraries(imu_to_hdt ${catkin_LIBRARIES})
 
+add_executable(imu_to_pashr src/imu_to_pashr.cpp)
+add_dependencies(imu_to_pashr ${marine_tools_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+target_link_libraries(imu_to_pashr ${catkin_LIBRARIES})
+
+
 install(TARGETS  marine_sonar_to_pointcloud navsatfix_to_nmea imu_to_hdt
         LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
         ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}

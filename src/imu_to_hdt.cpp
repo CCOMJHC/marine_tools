@@ -14,6 +14,8 @@ void imuCallback(const sensor_msgs::Imu::ConstPtr &message)
   auto yaw = tf2::getYaw(message->orientation);
 
   auto heading = 90.0 - (180.0*yaw/M_PI);
+  if (heading < 0.0)
+    heading += 360.0;
   nmea << heading;
 
   nmea << ",T\r\n";

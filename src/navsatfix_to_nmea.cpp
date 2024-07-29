@@ -17,7 +17,8 @@ void navSatFixCallback(const sensor_msgs::NavSatFix::ConstPtr &message)
   gmtime_r(&time_seconds, &time_struct);
 
   nmea << std::setfill('0') << std::setw(2) << time_struct.tm_hour;
-  nmea << time_struct.tm_min << time_struct.tm_sec;
+  nmea << std::setfill('0') << std::setw(2) << time_struct.tm_min;
+  nmea << std::setfill('0') << std::setw(2) << time_struct.tm_sec;
 
   int milliseconds = message->header.stamp.nsec / 1000000;
 
